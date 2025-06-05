@@ -12,6 +12,12 @@ export default async function handler(req, res) {
       ? process.env.SUPABASE_SERVICE_ROLE_KEY.slice(0, 10)
       : "undefined"
   );
+console.log(
+  "DEBUG OPENAI_API_KEY (first 10 chars):",
+  process.env.OPENAI_API_KEY
+    ? process.env.OPENAI_API_KEY.slice(0, 10)
+    : "undefined"
+);
 
   try {
     // 1) Build a full URL using req.url (path) plus the host header
