@@ -16,6 +16,12 @@ const openai = new OpenAI({
 
 // 3) This default export is what Vercel runs when /api/search is called
 export default async function handler(req, res) {
+  // Temporarily log our environment variables:
+console.log("DEBUG SUPABASE_URL:", process.env.SUPABASE_URL);
+console.log(
+  "DEBUG SUPABASE_SERVICE_ROLE_KEY (first 10 chars):",
+  process.env.SUPABASE_SERVICE_ROLE_KEY?.slice(0, 10)
+
   try {
     // 3.1) Read “q” from the URL: /api/search?q=some+text
     const url = new URL(req.url);
